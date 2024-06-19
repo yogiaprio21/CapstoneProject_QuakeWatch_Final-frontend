@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/css/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <meta name="dicoding:email" content="yogiaprio21@gmail.com">
+  <title>Maps - Quake Watch</title>
+
+  <script src="js/maps.js"></script>
+</head>
+
+<body>
+  <section id="home">
+    <header>
+      <nav class="fixed top-0 w-full z-50">
+        <div class="navbar bg-blue-900 shadow-md z-50 py-5">
+          <div class="navbar-start">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" id="menuButton">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-3xl font-bold text-white">Quake Watch</a>
+          </div>
+          <div class="navbar-end flex items-center pr-10">
+            <div class="hidden lg:flex mr-16">
+              <ul class="menu menu-horizontal px-1 gap-16 text-white font-bold text-lg">
+                <li class="text-lg"><a href="index.html">Home</a></li>
+                <li class="text-lg"><a href="maps.html">Maps</a></li>
+                <li class="text-lg"><a href="#donasi">Donasi</a></li>
+                <li class="text-lg"><a href="#artikel">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Background overlay -->
+        <div class="fixed top-0 left-0 h-full w-full bg-black bg-opacity-70 backdrop-blur-md z-40 hidden lg:hidden"
+          id="sidebarOverlay"></div>
+        <!-- Sidebar -->
+        <div
+          class="fixed top-0 left-0 h-full w-72 bg-blue-900 text-white z-50 transform transition-transform duration-300 ease-in-out -translate-x-full lg:hidden"
+          id="sidebar">
+          <div class="mt-5 text-center">
+            <a class="btn btn-ghost text-3xl font-bold text-white mb-3">Quake Watch</a>
+          </div>
+          <hr class="border-blue-600" />
+          <ul class="pt-5 font-bold text-xl">
+            <li class="">
+              <a href="index.html" class="flex items-center text-white py-6 px-6 hover:btn-ghost">
+                <ion-icon name="home-outline" class="text-white mr-2"></ion-icon>
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="maps.html" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="map-outline" class="text-white mr-2"></ion-icon> Maps</a>
+            </li>
+            <li>
+              <a href="index.html#donasi" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="heart-half-outline" class="text-white mr-2"></ion-icon>Donasi</a>
+            </li>
+            <li>
+              <a href="index.html#artikel" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="newspaper-outline" class="text-white mr-2"></ion-icon>Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </section>
+
+  <section class="lg:mx-16 md:mx-16 mx-6 mt-40 lg:mt-52">
+    <div class="container">
+      <h1 class="text-center text-3xl font-bold mb-8">Peta Gempa Terkini</h1>
+      <div id="map" style="width: 100%; height: 500px; margin-bottom: 100px; z-index: 0;"></div>
+    </div>
+  </section>
+
+  <footer class="bg-blue-900 text-center py-8 text-white font-bold text-lg">
+    <p>ⓒ Quake Watch 2024</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+
+</html>

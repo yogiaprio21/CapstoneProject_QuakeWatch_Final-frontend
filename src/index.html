@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/css/styles.css" rel="stylesheet" />
+  <meta name="dicoding:email" content="yogiaprio21@gmail.com">
+  <title>Quake Watch</title>
+</head>
+
+<body>
+  <section id="home">
+    <header>
+      <nav class="fixed top-0 w-full z-50">
+        <div class="navbar bg-blue-900 shadow-md z-50 py-5">
+          <div class="navbar-start">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" id="menuButton">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-3xl font-bold text-white">Quake Watch</a>
+          </div>
+          <div class="navbar-end flex items-center pr-10">
+            <div class="hidden lg:flex mr-16">
+              <ul class="menu menu-horizontal px-1 gap-16 text-white font-bold text-lg">
+                <li class="text-lg"><a href="index.html">Home</a></li>
+                <li class="text-lg"><a href="maps.html">Maps</a></li>
+                <li class="text-lg"><a href="#donasi">Donasi</a></li>
+                <li class="text-lg"><a href="#artikel">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Background overlay -->
+        <div class="fixed top-0 left-0 h-full w-full bg-black bg-opacity-70 backdrop-blur-md z-40 hidden lg:hidden"
+          id="sidebarOverlay"></div>
+        <!-- Sidebar -->
+        <div
+          class="fixed top-0 left-0 h-full w-72 bg-blue-900 text-white z-50 transform transition-transform duration-300 ease-in-out -translate-x-full lg:hidden"
+          id="sidebar">
+          <div class="mt-5 text-center">
+            <a class="btn btn-ghost text-3xl font-bold text-white mb-3">Quake Watch</a>
+          </div>
+          <hr class="border-blue-600" />
+          <ul class="pt-5 font-bold text-xl">
+            <li class="">
+              <a href="index.html" class="flex items-center text-white py-6 px-6 hover:btn-ghost">
+                <ion-icon name="home-outline" class="text-white mr-2"></ion-icon>
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="maps.html" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="map-outline" class="text-white mr-2"></ion-icon> Maps</a>
+            </li>
+            <li>
+              <a href="index.html#donasi" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="heart-half-outline" class="text-white mr-2"></ion-icon>Donasi</a>
+            </li>
+            <li>
+              <a href="index.html#artikel" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="newspaper-outline" class="text-white mr-2"></ion-icon>Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </section>
+
+  <section class="lg:mx-16 md:mx-16 mx-6 mt-40 lg:mt-52">
+    <div class="hero lg:mt-32 mt-24 flex flex-col lg:flex-row md:flex-row lg:justify-between md:justify-between">
+      <div class="hero-tex lg:text-start text-center lg:mt-24">
+        <h2 class="lg:text-5xl font-semibold text-black text-xl">Aplikasi Pemantau Gempa Indonesia</h2>
+        <h1 class="pt-3 text-black font-bold text-3xl lg:text-7xl">Quake Watch</h1>
+        <p class="pt-2 text-slate-700 text-base lg:text-xl">Melacak Aktivitas Gempa Bumi di Seluruh Indonesia</p>
+        <button
+          class="lg:mt-10 mt-9 mb-20 lg:px-10 px-20 py-3 text-white font-bold rounded-xl bg-blue-900 hover:bg-blue-950 duration-500 ease-in-out"><a
+            href="maps.html"
+            class="lg:mt-10 mt-9 mb-20 lg:px-10 px-20 py-3 text-white font-bold rounded-xl bg-blue-900 hover:bg-blue-950 duration-500 ease-in-out">Selanjutnya</a></button>
+      </div>
+      <div class="hero-image"><img src="img/gmabar.png" alt="hero" /></div>
+    </div>
+  </section>
+
+  <section id="donasi">
+    <div class="flex flex-col justify-center items-center my-16">
+      <h1 class="text-center pb-12 mt-32 text-3xl text-black font-bold">Daftar Donasi</h1>
+      <div class="flex lg:flex-row flex-col gap-4">
+        <!-- Donation Card 1 -->
+        <div id="donationCard1"
+          class="donation-card flex justify-center items-center lg:w-96 w-80 shadow-xl mx-auto rounded-xl transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+          <div class="py-6">
+            <img src="img/Rectangle 40.png" alt="" class="w-full rounded-tl-md rounded-tr-md" />
+            <div class="px-3">
+              <h1 class="pb-7 pt-3 text-2xl font-bold text-black">Bantu Penanganan Darurat dan Pemulihan</h1>
+              <p class="text-black pb-1">Tersedia</p>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+                <div id="progressBar1" class="bg-blue-900 h-2.5 rounded-full" style="width: 0;"></div>
+                <p id="progressAmount1" class="text-black pt-1">Rp. 0</p>
+              </div>
+              <button data-target="1" id="donasiButton1"
+                class="bg-blue-900 hover:bg-blue-950 duration-300 ease-in-out w-full text-center py-2 rounded-lg text-white font-bold mt-5">Donasi</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donation Card 2 -->
+        <div id="donationCard2"
+          class="donation-card flex justify-center items-center lg:w-96 w-80 shadow-xl mx-auto rounded-xl transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+          <div class="py-6">
+            <img src="img/Rectangle 40 (1).png" alt="" class="w-full rounded-tl-md rounded-tr-md" />
+            <div class="px-3">
+              <h1 class="pb-7 pt-3 text-2xl font-bold text-black">Donasi untuk Perbaikan Infrastruktur dan Bantuan
+                Korban Gempa</h1>
+              <p class="text-black pb-1">Tersedia</p>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+                <div id="progressBar2" class="bg-blue-900 h-2.5 rounded-full" style="width: 0;"></div>
+                <p id="progressAmount2" class="text-black pt-1">Rp. 0</p>
+              </div>
+              <button data-target="2" id="donasiButton2"
+                class="bg-blue-900 hover:bg-blue-950 duration-300 ease-in-out w-full text-center py-2 rounded-lg text-white font-bold mt-5">Donasi</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donation Card 3 -->
+        <div id="donationCard3"
+          class="donation-card flex justify-center items-center lg:w-96 w-80 shadow-xl mx-auto rounded-xl transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+          <div class="py-6">
+            <img src="img/Rectangle 40.png" alt="" class="w-full rounded-tl-md rounded-tr-md" />
+            <div class="px-3">
+              <h1 class="pb-7 pt-3 text-2xl font-bold text-black">Donasi untuk Korban Gempa dan Rehabilitasi</h1>
+              <p class="text-black pb-1">Tersedia</p>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+                <div id="progressBar3" class="bg-blue-900 h-2.5 rounded-full" style="width: 0;"></div>
+                <p id="progressAmount3" class="text-black pt-1">Rp. 0</p>
+              </div>
+              <button data-target="3" id="donasiButton3"
+                class="bg-blue-900 hover:bg-blue-950 duration-300 ease-in-out w-full text-center py-2 rounded-lg text-white font-bold mt-5">Donasi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="artikel">
+    <div class="flex flex-col justify-center items-center my-16">
+      <h1 class="text-center pb-12 mt-32 text-3xl text-black font-bold">Baca Juga</h1>
+      <div id="articleList" class="flex lg:flex-row flex-col gap-4">
+      </div>
+    </div>
+  </section>
+
+
+  <section id="tentangkami">
+    <div class="flex flex-col justify-center items-center my-16">
+      <h1 class="text-center pb-12 mt-32 text-3xl text-black font-bold">Tentang Kami</h1>
+      <div class="flex lg:flex-row flex-col gap-4">
+        <div
+          class="flex justify-center items-center lg:w-72 w-80 shadow-xl mx-auto rounded-xl transform transition-transform duration-300 hover:scale-105 cursor-pointer border-2">
+          <div class="flex flex-col items-center px-0 py-6 text-center">
+            <img src="img/WhatsApp Image 2024-06-07 at 16.41.34.jpeg" alt=""
+              class="h-28 w-28 rounded-full object-[59%_-4px] border-2" />
+            <h1 class="pb-1 pt-5 text-2xl font-bold text-black">A.D.Nur Pramana</h1>
+            <p class="pt-2 text-black">UI/UX Designer</p>
+            <div class="flex justify-center gap-3 pt-4">
+              <a href="https://github.com/Adnprr" target="_blank"><img src="img/mdi_github.png" alt=""
+                  class="w-10" /></a>
+              <a href="#"><img src="img/mdi_linkedin.png" alt="" class="w-10" /></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center lg:w-72 w-80 shadow-xl mx-auto rounded-xl transform transition-transform duration-300 hover:scale-105 cursor-pointer border-2">
+          <div class="flex flex-col items-center px-0 py-6 text-center">
+            <img src="img/WhatsApp Image 2024-06-07 at 16.29.31.jpeg" alt=""
+              class="h-28 w-28 rounded-full object-[59%_-4px] border-2" />
+            <h1 class="pb-1 pt-5 text-2xl font-bold text-black">Septian Nugraha Kartadilaga</h1>
+            <p class="pt-2 text-black">Front-End Developer</p>
+            <div class="flex justify-center gap-3 pt-4">
+              <a href="https://github.com/Kartadilaga" target="_blank"><img src="img/mdi_github.png" alt=""
+                  class="w-10" /></a>
+              <a href="#"><img src="img/mdi_linkedin.png" alt="" class="w-10" /></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex justify-center items-center lg:w-72 w-80 shadow-xl mx-auto rounded-xl transform transition-transform duration-300 hover:scale-105 cursor-pointer border-2">
+          <div class="flex flex-col items-center px-0 py-6 text-center">
+            <img src="img/IMG_20240618_023138.jpg" alt="" class="h-28 w-28 rounded-full object-[59%_-4px] border-2" />
+            <h1 class="pb-1 pt-5 text-2xl font-bold text-black">Yogi Aprio</h1>
+            <p class="pt-2 text-black">Back-End Developer</p>
+            <div class="flex justify-center gap-3 pt-4">
+              <a href="https://github.com/yogiaprio21" target="_blank"><img src="img/mdi_github.png" alt=""
+                  class="w-10" /></a>
+              <a href="#"><img src="img/mdi_linkedin.png" alt="" class="w-10" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-blue-900 text-center py-8 text-white font-bold text-lg">
+    <p>ⓒ Quake Watch 2024</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/donasi.js" defer></script>
+  <script src="js/artikel.js"></script>
+
+</body>
+
+</html>

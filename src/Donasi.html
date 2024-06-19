@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/css/styles.css" rel="stylesheet" />
+  <meta name="dicoding:email" content="yogiaprio21@gmail.com">
+  <title>Quake Watch</title>
+</head>
+
+<body>
+  <section id="home">
+    <header>
+      <nav class="fixed top-0 w-full z-50">
+        <div class="navbar bg-blue-900 shadow-md z-50 py-5">
+          <div class="navbar-start">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" id="menuButton">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-3xl font-bold text-white">Quake Watch</a>
+          </div>
+          <div class="navbar-end flex items-center pr-10">
+            <div class="hidden lg:flex mr-16">
+              <ul class="menu menu-horizontal px-1 gap-16 text-white font-bold text-lg">
+                <li class="text-lg"><a href="index.html">Home</a></li>
+                <li class="text-lg"><a href="maps.html">Maps</a></li>
+                <li class="text-lg"><a href="#donasi">Donasi</a></li>
+                <li class="text-lg"><a href="#artikel">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Background overlay -->
+        <div class="fixed top-0 left-0 h-full w-full bg-black bg-opacity-70 backdrop-blur-md z-40 hidden lg:hidden"
+          id="sidebarOverlay"></div>
+        <!-- Sidebar -->
+        <div
+          class="fixed top-0 left-0 h-full w-72 bg-blue-900 text-white z-50 transform transition-transform duration-300 ease-in-out -translate-x-full lg:hidden"
+          id="sidebar">
+          <div class="mt-5 text-center">
+            <a class="btn btn-ghost text-3xl font-bold text-white mb-3">Quake Watch</a>
+          </div>
+          <hr class="border-blue-600" />
+          <ul class="pt-5 font-bold text-xl">
+            <li class="">
+              <a href="index.html" class="flex items-center text-white py-6 px-6 hover:btn-ghost">
+                <ion-icon name="home-outline" class="text-white mr-2"></ion-icon>
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="maps.html" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="map-outline" class="text-white mr-2"></ion-icon> Maps</a>
+            </li>
+            <li>
+              <a href="index.html#donasi" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="heart-half-outline" class="text-white mr-2"></ion-icon>Donasi</a>
+            </li>
+            <li>
+              <a href="index.html#artikel" class="text-white py-6 px-6 flex items-center hover:btn-ghost"><ion-icon
+                  name="newspaper-outline" class="text-white mr-2"></ion-icon>Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </section>
+
+  <section>
+    <div class="mt-36 mb-10">
+      <div class="flex flex-col justify-center items-center text-black text-start mx-10 lg:mx-0">
+        <div class="flex flex-col">
+          <h1 class="text-3xl font-bold pb-2">Berikan Donasi</h1>
+          <img src="img/Rectangle 32.png" alt="" />
+          <label for="" class="text-lg font-semibold pt-6 pb-2">Nama</label>
+          <input type="text" placeholder="Masukan Nama"
+            class="bg-white py-3 pl-4 shadow-lg rounded-lg border-2 focus:outline-none focus:ring-0" id="name" />
+          <label for="" class="text-lg font-semibold py-2">Nominal</label>
+          <input type="text"
+            class="bg-white py-3 pl-4 pr-4 shadow-lg rounded-lg border-2 focus:outline-none focus:ring-0"
+            placeholder="RP." id="nominal" />
+          <label for="" class="text-lg font-semibold py-2">Keterangan</label>
+          <textarea name="" id="desc"
+            class="bg-white pt-3 pb-12 pl-4 pr-4 shadow-lg rounded-lg border-2 focus:outline-none focus:ring-0 resize-none overflow-auto scrollbar-hide"
+            placeholder="Masukan Keterangan"></textarea>
+          <!-- Hidden fields to store donation data -->
+          <input type="hidden" id="donationCardId" />
+          <input type="hidden" id="currentProgress" />
+          <button type="button" id="kirimButton"
+            class="bg-blue-900 hover:bg-blue-950 duration-300 ease-in-out w-full text-center py-3 rounded-lg text-white font-bold text-xl mt-5">Kirim</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    const button = document.getElementById("kirimButton")
+    button.addEventListener('click', async function () {
+      const baseUrl = 'http://localhost:3000'
+      const name = document.getElementById("name").value
+      const nominalIn = document.getElementById("nominal").value
+      const desc = document.getElementById("desc").value
+
+      await fetch(baseUrl + '/api/donation/create', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: name,
+          nominal: parseInt(nominalIn),
+          desc: desc
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert(res.message)
+        })
+    })
+  </script>
+</body>
+
+</html>

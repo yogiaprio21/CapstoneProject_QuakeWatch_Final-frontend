@@ -1,0 +1,24 @@
+{
+  "name": "quakewatch",
+  "version": "1.0.0",
+  "description": "Informasi Gempa Terkini",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i ./src/css/tailwind.css -o ./dist/css/styles.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lordicon/element": "^1.6.0",
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.11.1",
+    "express": "^4.19.2",
+    "idb": "^8.0.0",
+    "lottie-web": "^5.12.2",
+    "postcss": "^8.4.38",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "tailwindcss": "^3.4.3"
+  }
+}
